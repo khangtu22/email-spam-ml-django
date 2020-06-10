@@ -9,6 +9,8 @@ from spam_email.models import Email
 from tabulate import tabulate
 import pickle
 import string
+
+# python -m nltk.downloader stopwords
 from nltk.corpus import stopwords
 
 
@@ -88,11 +90,11 @@ def predict(message):
         accuracy = value_ham
 
     if result == 'spam':
-        if accuracy > 80:
+        if accuracy > 80.0:
             result = 'Very likely a spam'
         else:
             result = 'Less likely a spam'
-    elif accuracy > 80:
+    elif accuracy > 80.0:
         result = 'Very likely a ham'
     else:
         result = 'Less likely a ham'
