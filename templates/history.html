@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+<body>
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron mt-5">
+        <h1>History List</h1>
+        <ul class="list-group list-group-flush mt-5">
+            {% for email in object_list %}
+          <li class="list-group-item">
+            <p>"{{ email.content }}"</p>
+            <p> by {{ email.author }} |<span class="text-warning"> {{ email.result }} </span>| {{ email.accuracy }}% | {{ email.last_updated }}</p>
+            <p><a href="{% url 'email_delete' email.pk %}" class="changelink">Delete</a></p>
+          </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock content %}
+</body>
+
+</html>

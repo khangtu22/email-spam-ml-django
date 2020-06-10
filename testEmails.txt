@@ -1,0 +1,23 @@
+Hello!
+
+New contributor here (at least I hope to be). I had two small tweaks to the admin templates that I wanted to run by people here:
+
+1) I added a block within the breadcrumbs around the initial "Home" part, and adjusted all the templates such that a user could override this new block once in base_site.html and replace "Home" with something else. For example, in my case, I'd like to make it more like "Site > Admin", with links. Right now, this appears to require extending all of the templates. See commit.
+
+2) I could be wrong, but it doesn't seem like there's a direct way to add content between the header and the breadcrumbs. In my case, I've provided a drop-down menu bar there, by overriding base.html. However, it would be better if I could leave base.html untouched, and just extend base_site.html. So I added an empty block at that location in base.html. See commit.
+
+Would either or both of these be acceptable for PRs? Would I need docs/tests/tickets?
+
+Regards,
+
+
+
+--------------------------------
+
+Khang Tú,
+
+It’s the eleventh hour.
+
+But your decision is simple: if you want to work your way to fluency, learning with 50% off Premium is your best bet.
+
+Think it over. Take a deep breath. Good. Now click before it’s too late.

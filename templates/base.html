@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Spam Detector</title>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+    <style>
+         #main{
+                min-height: calc(100vh - 56px - 53px);
+            }
+    </style>
+    {% block base_head %}{% endblock %}
+
+
+</head>
+<body class="body">
+{% include "base/navbar.html" with base_name='SpamHam' %}
+<div class="container" id="main">
+    {% block content %}
+    {% endblock %}
+</div>
+{% include "base/footer.html" with base_name='Footer' %}
+
+</body>
+
+</html>
