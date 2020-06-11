@@ -2,9 +2,8 @@
 {% load static %}
 
 {% block content %}
-
-    <br>
-    <div class="jumbotron mt-5">
+    <br> <br>
+     <div class="jumbotron mt-5">
         <h2 style="font-weight: bold">How does it work?</h2>
         <p>Paste the content of email in to find out email is spam or not.</p>
         <p>Hint: <a href="{% url 'login' %}"> login </a> to get more exciting thing!</p>
@@ -23,16 +22,33 @@
     <br><br>
     <div id="scroll">
         {% if result %}
-            <script>scrollDown();</script>
-            <div class="jumbotron" id="result">
+           <div class="jumbotron" id="result">
                 <h2 class="font-weight-bold">Result</h2>
                 <div><br> "{{ message }}" <br><br></div>
                 <p class="text-warning"><strong style="font-size: larger">{{ result }}</strong>! | <span class="text-success">{{ accuracy }}% accuracy.</span> </p>
             </div>
             <script>scrollDown();</script>
+
+
         {% else %}
             <p></p>
         {% endif %}
-    </div>
-{% endblock %}
 
+        <div class="text-center container" style="color:whitesmoke">
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            {% if result %}
+                <script>scrollDown();</script>
+            {% endif %}
+        </div>
+    </div>
+
+    {#    <script>scrollDown();</script>#}
+
+
+{% endblock %}
