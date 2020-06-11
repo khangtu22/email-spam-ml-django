@@ -23,17 +23,13 @@
     <br><br>
     <div id="scroll">
         {% if result %}
+            <script>scrollDown();</script>
             <div class="jumbotron" id="result">
-                <script>scrollDown();</script>
                 <h2 class="font-weight-bold">Result</h2>
-                <div> <span class="font-weight-bold">You entered: </span><br> "{{ message }}" <br><br></div>
-                <p class="text-warning"><strong style="font-size: larger">{{ result }}</strong>!</p> <br>
-
-                <p>Test accuracy: <span class="text-success">{{ accuracy }}%</span></p>
+                <div><br> "{{ message }}" <br><br></div>
+                <p class="text-warning"><strong style="font-size: larger">{{ result }}</strong>! | <span class="text-success">{{ accuracy }}% accuracy.</span> </p>
             </div>
             <script>scrollDown();</script>
-
-
         {% else %}
             <p></p>
         {% endif %}

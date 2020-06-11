@@ -41,6 +41,7 @@ def home(request):
         message = text_process(message)
         message = [' '.join(message)]
         result, accuracy = predict(message)
+
         print('result is ', result, 'with accuracy ', accuracy)
         print("\n")
 
@@ -52,6 +53,7 @@ def home(request):
             email.accuracy = accuracy
             email.author = request.user
             email.save()
+
         return render(request, 'home.html', {'result': result, 'message': message_cp, 'accuracy': accuracy})
     return render(request, 'home.html')
 
@@ -65,8 +67,7 @@ def predict(message):
     value_spam = test_prob[0][1]
     value_ham = test_prob[0][0]
 
-    print(
-        tabulate([['Spam', test_prob[0][1]], ['Ham', test_prob[0][0]], ['Result', test[0]]], headers=['What', 'Prob']))
+    print(tabulate([['Spam (1)', test_prob[0][1]], ['Ham (0)', test_prob[0][0]], ['Result', test[0]]], headers=['What', 'Prob']))
 
     if value_spam > 0.5:
         result = 'spam'
@@ -89,6 +90,8 @@ def predict(message):
         result = 'ham'
         accuracy = value_ham
 
+    accuracy = round(accuracy, 2) * 100
+
     if result == 'spam':
         if accuracy > 80.0:
             result = 'Very likely a spam'
@@ -96,9 +99,10 @@ def predict(message):
             result = 'Less likely a spam'
     elif accuracy > 80.0:
         result = 'Very likely a ham'
-    else:
+    elif accuracy < 80.0:
         result = 'Less likely a ham'
-    return result, round(accuracy, 2) * 100
+
+    return result,accuracy
 
 
 def text_process(message):

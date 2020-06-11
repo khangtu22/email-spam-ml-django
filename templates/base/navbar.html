@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'assets/logo/logo.png' %}">
 
-
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
@@ -25,17 +24,22 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse"> {% if user.is_authenticated %} <ul class="navbar-nav ml-auto">
-                <li class="nav-item"> <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ user.username }} </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                        <a class="dropdown-item" href="{% url 'logout' %}"> Log Out</a>
-                    </div>
-                </li>
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            {% if user.is_authenticated %}
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                            <a class="dropdown-item" href="{% url 'logout' %}"> Log Out</a>
+                        </div>
+                    </li>
+                </ul>
         {% else %}
             <form class="form-inline ml-auto">
-                <a href="{% url 'login' %}" class="badge badge-pill badge-info"> Login</a>
-                <a href="{% url 'signup' %}" class="badge badge-pill badge-info ml-4">Signup</a>
+                <a href="{% url 'login' %}" class="text-white bg-dark"> Login</a>
+                <a href="{% url 'signup' %}" class="text-white bg-dark ml-3">Signup</a>
             </form>
         {% endif %}
         </div>

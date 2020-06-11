@@ -16,7 +16,9 @@
           <li class="list-group-item">
             <p>"{{ email.content }}"</p>
             <p> by {{ email.author }} |<span class="text-warning"> {{ email.result }} </span>| {{ email.accuracy }}% | {{ email.last_updated }}</p>
-            <p><a href="{% url 'email_delete' email.pk %}" class="changelink">Delete</a></p>
+            <p>
+                <a href="{% url 'email_delete' email.pk %}" class="changelink">Delete</a>
+            </p>
           </li>
             {% endfor %}
         </ul>
