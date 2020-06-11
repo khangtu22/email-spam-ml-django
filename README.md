@@ -1,6 +1,19 @@
 # email-spam-classifier
-Step
-- Make a virtual environment using: pip install pipenv
-- Install requirement: pip install -r requirements.txt
-- Additional requirement: python -m nltk.downloader stopwords
-- Run project: pip manage.py runserver
+This project's purpose is to classify email is spam or ham.
+## Steps
+* Make a virtual environment using:
+```
+pip install pipenv
+```
+* Install requirement: 
+```
+pip install -r requirements.txt
+```
+* Additional requirement: 
+```
+python -m nltk.downloader stopwords
+```
+* Run project: 
+```
+python manage.py runserver
+```
