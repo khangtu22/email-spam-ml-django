@@ -1,7 +1,6 @@
 # email-spam-classifier
 Step
-- Make a virtual environment
-- pip install -r requirements.txt
-- pip manage.py runserver
-Note
-- If "stopword" is run into problem we need to run "python -m nltk.downloader stopwords".
+- Make a virtual environment using: pip install pipenv
+- Install requirement: pip install -r requirements.txt
+- Additional requirement: python -m nltk.downloader stopwords
+- Run project: pip manage.py runserver
