@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'spam_email.apps.SpamEmailConfig',  # new
-    'whitenoise.runserver_nostatic',  # new
+    'whitenoise.runserver_nostatic',  #
     'users.apps.UsersConfig',
 
     # pip install django-crispy-forms

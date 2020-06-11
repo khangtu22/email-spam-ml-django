@@ -1,1 +1,1 @@
-web: gunicorn spam_email_7.wsgi --log-file -
+web: gunicorn spam-email-7.wsgi --log-file -

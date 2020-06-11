@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 gunicorn = "*"
-whitenoise = "*"
+whitenoise = "==5.1.0"
 
 [requires]
 python_version = "3.8"
