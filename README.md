@@ -15,5 +15,5 @@ python -m nltk.downloader stopwords
 ```
 * Run project: 
 ```
-pip manage.py runserver
+python manage.py runserver
 ```
