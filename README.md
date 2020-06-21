@@ -1,5 +1,5 @@
 # email-spam-classifier
-This project's purpose is to classify email is spam or ham.
+This project's purpose is to classify email is spam or ham. We implemented on PyCharm. 
 ## Steps
 * Make a virtual environment using:
 ```
