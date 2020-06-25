@@ -10,15 +10,15 @@
 
 {% block content %}
     <div class="jumbotron mt-5">
-        <h1>History List</h1>
+        <h2 style="font-weight: bold">History</h2>
         <ul class="list-group list-group-flush mt-5">
             {% for email in object_list %}
           <li class="list-group-item">
             <p>"{{ email.content }}"</p>
             <p> by {{ email.author }} |<span class="text-warning"> {{ email.result }} </span>| {{ email.accuracy }}% | {{ email.last_updated }}</p>
-            <p>
+              <p>
                 <a href="{% url 'email_delete' email.pk %}" class="changelink">Delete</a>
-            </p>
+              </p>
           </li>
             {% endfor %}
         </ul>

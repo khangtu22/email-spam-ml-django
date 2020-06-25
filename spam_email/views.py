@@ -10,7 +10,6 @@ from tabulate import tabulate
 import pickle
 import string
 
-# python -m nltk.downloader stopwords
 from nltk.corpus import stopwords
 
 
