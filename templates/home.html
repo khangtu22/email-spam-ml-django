@@ -4,10 +4,14 @@
 {% block content %}
     <br> <br>
      <div class="jumbotron mt-5">
-        <h2 style="font-weight: bold">How does it work?</h2>
-        <p>Paste the content of email in to find out email is spam or not.</p>
-        <p>Hint: <a href="{% url 'login' %}"> login </a> to get more exciting thing!</p>
-
+         <h2 style="font-weight: bold">How does it work?</h2>
+         <p>Paste the content of email in to find out email is spam or not.</p>
+         {% if not user.is_authenticated %}
+             <p>Your checked email will not save or we are not attempt to do anything with your email if you are a guest user. If you want to save email, you can login.</p>
+            <p>Hint: <a href="{% url 'login' %}"> login </a> to get more exciting thing!</p>
+         {% elif user.is_authenticated %}
+            <p>Hint: Now you can see history checked of other.</p>
+         {% endif %}
         <form method="post">
               <div class="form-group">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message" required="required" placeholder="Your email go here... "></textarea>
@@ -35,13 +39,6 @@
         {% endif %}
 
         <div class="text-center container" style="color:whitesmoke">
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
-            <br><br>
             {% if result %}
                 <script>scrollDown();</script>
             {% endif %}

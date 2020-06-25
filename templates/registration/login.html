@@ -12,18 +12,13 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-      <form method="post" class="text-center p-5" >
-          <p class="h4 mb-4">Login</p>
-          {% csrf_token %}
-          <div class="form-row">
-          <div class="form-group col-md-12 mb-0">
-            {{ form.username|as_crispy_field }}
-          </div>
-          <div class="form-group col-md-12 mb-0">
-            {{ form.password|as_crispy_field }}
-          </div>
-        </div>
-          <br>
+         <div class="jumbotron mt-5">
+         <form method="post">
+         <p class="h4 mb-4">Login</p>
+            {% csrf_token %}
+            {{form|crispy }}
+          <p>Don't have an account? <a href="{% url 'signup' %}"> Sign up </a> </p>
           <button class="btn btn-success ml-2" type="submit">Login</button>
         </form>
+         </div>
 {% endblock %}
