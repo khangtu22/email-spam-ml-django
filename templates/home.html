@@ -29,7 +29,17 @@
            <div class="jumbotron" id="result" style="border-radius: 10px">
                 <h2 class="font-weight-bold">Result</h2>
                 <div><br> "{{ message }}" <br><br></div>
-                <p class="text-warning"><strong style="font-size: larger">{{ result }}</strong>! | <span class="text-success">{{ accuracy }}% accuracy.</span> </p>
+                {% if result == "ham" %}
+                    <p class="text-success"><strong style="font-size: larger">{{ result }}</strong> <span class="text-dark"> | </span><span class="text-warning">{{ accuracy }}% accuracy.</span> </p>
+                    <div class="progress">
+                       <div class="progress-bar success-color" role="progressbar" style="width: {{ accuracy }}%" aria-valuenow="{{ accuracy }}" aria-valuemin="0" aria-valuemax="100">{{ accuracy }}% accuracy</div>
+                    </div>
+                {% elif result == "spam"  %}
+                    <p class="text-danger"><strong style="font-size: larger">{{ result }}</strong> <span class="text-dark">|</span> <span class="text-success">{{ accuracy }}% accuracy.</span> </p>
+                    <div class="progress">
+                       <div class="progress-bar danger-color" role="progressbar" style="width: {{ accuracy }}%" aria-valuenow="{{ accuracy }}" aria-valuemin="0" aria-valuemax="100">{{ accuracy }}% accuracy</div>
+                    </div>
+                {% endif %}
             </div>
             <script>scrollDown();</script>
         {% else %}
