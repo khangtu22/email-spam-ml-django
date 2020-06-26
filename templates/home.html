@@ -1,33 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>Spam Detector</title>
-    <script src="{% static 'assets/js/script.js' %}"></script>
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/MDB/css/mdb.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/MDB/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/MDB/css/mdb.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/base.css' %}">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&amp;display=swap">
-
-    <script type="text/javascript">
-        $('textarea').autoResize();
-    </script>
-    <style>
-        textarea{
-            resize:vertical;
-            max-height:300px;
-            min-height:200px;
-        }
-    </style>
-</head>
-<body>
 {% block content %}
      <div class="jumbotron mt-5" style="border-radius: 10px">
          <h2 style="font-weight: bold">How does it work?</h2>
@@ -41,7 +14,7 @@
          {% endif %}
         <form method="post">
               <div class="form-group">
-                <textarea style="resize: vertical; min-height: 150px; max-height: 400px" class="form-control" id="exampleFormControlTextarea1" rows="3" name="message" required="required" placeholder="Your email go here... "></textarea>
+                  <textarea style="resize: none; min-height: 120px;" class="form-control" id="exampleFormControlTextarea1" rows="3" name="message" required="required" placeholder="Your email go here... "></textarea>
               </div>
             <br>
             <button type="submit" onclick="scrollDown()" class="btn text-white btn-block btn-large check1" style="background-color: #7952b3"> Check Now!
@@ -59,22 +32,13 @@
                 <p class="text-warning"><strong style="font-size: larger">{{ result }}</strong>! | <span class="text-success">{{ accuracy }}% accuracy.</span> </p>
             </div>
             <script>scrollDown();</script>
-
-
         {% else %}
             <p></p>
         {% endif %}
-
         <div class="text-center container" style="color:whitesmoke">
             {% if result %}
                 <script>scrollDown();</script>
             {% endif %}
         </div>
     </div>
-
-    {#    <script>scrollDown();</script>#}
-
-
 {% endblock %}
-</body>
-</html>
