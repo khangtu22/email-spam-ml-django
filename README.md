@@ -18,3 +18,6 @@ python -m nltk.downloader stopwords
 python manage.py runserver
 ```
 access : http://127.0.0.1:8000/
+
+## Preview
+![alt text](https://github.com/khangtu22/email-spam-classifier/blob/master/imgProduction.png)
