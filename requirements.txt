@@ -20,4 +20,3 @@ threadpoolctl==2.1.0
 tqdm==4.46.0
 utils==1.0.1
 whitenoise==5.1.0
-forms
