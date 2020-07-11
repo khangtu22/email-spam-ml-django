@@ -1,5 +1,5 @@
 # email-spam-classifier
-- This project's purpose is to classify email is spam or ham. We implemented on PyCharm. 
+- This project's purpose is to classify email is spam or ham. We implemented on PyCharm.  
 - Preview app on Heroku: https://warm-thicket-98434.herokuapp.com/
 ## Steps
 * Make a virtual environment using:
@@ -18,7 +18,7 @@ python -m nltk.downloader stopwords
 ```
 python manage.py runserver
 ```
-access : http://127.0.0.1:8000/
+Finally access : http://127.0.0.1:8000/
 
 ## Preview
 ![alt text](https://github.com/khangtu22/email-spam-classifier/blob/master/imgProduction.png)
