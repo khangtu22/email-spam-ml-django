@@ -4,7 +4,7 @@ Django==3.0.7
 django-crispy-forms==1.9.1
 gunicorn==20.0.4
 jieba==0.42.1
-joblib==0.15.1
+joblib==1.2.0
 nltk==3.5
 numpy==1.18.4
 pytz==2020.1
